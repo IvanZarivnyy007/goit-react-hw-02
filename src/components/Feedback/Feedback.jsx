@@ -1,4 +1,9 @@
+import Notification from "../Notification/Notification";
+
 export const Feedback = ({ item, totalFeedback }) => {
+  if (!totalFeedback) {
+    return <Notification />;
+  }
   return (
     <div className="Feedback">
       <p className="Feed-text">Good : {item.good}</p>
