@@ -1,15 +1,16 @@
 import Notification from "../Notification/Notification";
 
-export const Feedback = ({ item, totalFeedback }) => {
+export const Feedback = ({ item, totalFeedback, positiveFeedback }) => {
   if (!totalFeedback) {
     return <Notification />;
   }
   return (
     <div className="Feedback">
-      <p className="Feed-text">Good : {item.good}</p>
-      <p className="Feed-text">Neutral : {item.neutral}</p>
-      <p className="Feed-text">Bad : {item.bad}</p>
-      <p className="Feed-text">Total Feedback: {totalFeedback}</p>
+      <p className="feed-text">Good : {item.good}</p>
+      <p className="feed-text">Neutral : {item.neutral}</p>
+      <p className="feed-text">Bad : {item.bad}</p>
+      <p className="feed-text">Total Feedback: {totalFeedback}</p>
+      <p className="feed-text-1">Positive : {positiveFeedback}%</p>
     </div>
   );
 };

@@ -33,6 +33,7 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: darkblue;
 }
 
 button {
@@ -64,7 +65,7 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #747bff;
+    background-color: red;
   }
 }
 
@@ -76,4 +77,25 @@ button:focus-visible {
   gap: 10px;
   justify-content: center;
   margin-top: 40px;
+}
+
+.text {
+  font-size: 30px;
+  font-family: sans-serif;
+  color: steelblue;
+}
+
+.notification {
+  font-size: 25px;
+  color: steelblue;
+}
+
+.feed-text {
+  font-size: 25px;
+  color: midnightblue;
+}
+
+.feed-text-1 {
+  font-size: 25px;
+  color: red;
 }
