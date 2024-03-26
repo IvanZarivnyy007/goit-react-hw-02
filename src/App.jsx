@@ -1,10 +1,9 @@
-// App.js
 import { useState, useEffect } from "react";
 import "./App.css";
 import { Description } from "./components/Description/Description.module";
 import Options from "./components/Options/Options";
 import { Feedback } from "./components/Feedback/Feedback";
-// import Notification from "./components/Notification/Notification";
+import Notification from "./components/Notification/Notification";
 
 function App() {
   const [click, setClick] = useState({
@@ -44,12 +43,15 @@ function App() {
         totalFeedback={totalFeedback}
         reset={reset}
       />
-      <Feedback
-        item={click}
-        totalFeedback={totalFeedback}
-        positiveFeedback={positiveFeedback}
-      />
-      {/* <Notification /> */}
+      {totalFeedback > 0 ? (
+        <Feedback
+          item={click}
+          totalFeedback={totalFeedback}
+          positiveFeedback={positiveFeedback}
+        />
+      ) : (
+        <Notification />
+      )}
     </>
   );
 }

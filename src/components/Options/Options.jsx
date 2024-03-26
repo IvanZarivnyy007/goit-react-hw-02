@@ -1,6 +1,3 @@
-// Options.js
-// import React from "react";
-// import Notification from "../Notification/Notification";
 import { FaGrin } from "react-icons/fa";
 import { FaMeh } from "react-icons/fa";
 import { FaGrimace } from "react-icons/fa";
