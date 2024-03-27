@@ -12,6 +12,24 @@ function App() {
     bad: 0,
   });
 
+  useEffect(() => {
+    const savedFeedback = window.localStorage.getItem("feedback");
+
+    if (savedFeedback) {
+      setClick(JSON.parse(savedFeedback));
+    } else {
+      setClick({
+        good: 0,
+        neutral: 0,
+        bad: 0,
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("feedback", JSON.stringify(click));
+  }, [click]);
+
   const reset = () => {
     setClick({
       good: 0,
@@ -22,10 +40,6 @@ function App() {
 
   const totalFeedback = click.good + click.neutral + click.bad;
 
-  useEffect(() => {
-    window.localStorage.setItem("feedback", JSON.stringify(click));
-  }, [click]);
-
   const updateFeedback = (feedbackType) => {
     setClick({
       ...click,
@@ -33,7 +47,10 @@ function App() {
     });
   };
 
-  const positiveFeedback = Math.round((click.good / totalFeedback) * 100);
+  // const positiveFeedback = Math.round((click.good / totalFeedback) * 100);
+
+  const positiveFeedback =
+    totalFeedback !== 0 ? Math.round((click.good / totalFeedback) * 100) : 0;
 
   return (
     <>
